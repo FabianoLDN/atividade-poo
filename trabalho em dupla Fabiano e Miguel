@@ -1,0 +1,40 @@
+# Criando uma matriz 3x3 vazia
+matriz = [[0, 0, 0],
+          [0, 0, 0],
+          [0, 0, 0]]
+
+# Preenchendo a matriz com valores do teclado
+for linha in range(3):
+    for coluna in range(3):
+        matriz[linha][coluna] = int(input(f"Digite um número para [{linha}, {coluna}]: "))
+
+# Mostrando a matriz formatada
+print("\nMatriz digitada:")
+for linha in range(3):
+    for coluna in range(3):
+        print(f"[{matriz[linha][coluna]:^5}]", end="")
+    print()
+
+# A) Soma dos valores pares
+soma_pares = 0
+for linha in range(3):
+    for coluna in range(3):
+        if matriz[linha][coluna] % 2 == 0:
+            soma_pares += matriz[linha][coluna]
+
+# B) Soma dos valores da terceira coluna
+soma_terceira_coluna = 0
+for linha in range(3):
+    soma_terceira_coluna += matriz[linha][2]
+
+# C) Maior valor da segunda linha
+maior_segunda_linha = matriz[1][0]
+for coluna in range(1, 3):
+    if matriz[1][coluna] > maior_segunda_linha:
+        maior_segunda_linha = matriz[1][coluna]
+
+# Mostrando os resultados
+print("\nResultados:")
+print("A) Soma dos valores pares:", soma_pares)
+print("B) Soma dos valores da terceira coluna:", soma_terceira_coluna)
+print("C) Maior valor da segunda linha:", maior_segunda_linha)
